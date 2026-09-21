@@ -1,7 +1,9 @@
 # Project Pulse
 
 **Course:** CMPE 165: Software Engineering Process Management
+
 **Semester:** Fall 2026
+
 **Team Members:** Ayana Ahuja, Gonul Koker, Cindy Tat, Rachel Tran
 
 ## Project overview
