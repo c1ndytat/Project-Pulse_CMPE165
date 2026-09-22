@@ -41,17 +41,33 @@ The app creates `project_pulse.db` in the project directory on first launch.
 This local SQLite file stores the prototype's tasks, blockers, and decisions.
 It is intentionally ignored by Git because it contains local runtime data.
 
+### Reproducing the Monte Carlo simulation (report Part J)
+
+The project report includes a Monte Carlo simulation of the product's
+four-year NPV. To reproduce it, run:
+
+```bash
+python monte_carlo.py
+```
+
+The script runs 10,000 trials with a fixed random seed, so it produces the same
+results every time. It prints a summary to the terminal and saves the trial data
+(`mc_trials.csv`) and three charts (`mc_histogram.png`, `mc_pilot_gate.png`,
+`mc_sensitivity.png`) in the project directory.
+
 ## Tech stack
 
 - **Frontend and application:** Python, Streamlit
 - **Persistence:** SQLite through Python's standard-library `sqlite3` module
+- **Analysis (Monte Carlo simulation):** NumPy, Matplotlib
 - **Deployment:** Local development prototype
 
 ## System architecture
 
 ```text
 app.py                 Streamlit UI, validation, and application logic
-requirements.txt       Python dependency pin range
+monte_carlo.py         Monte Carlo simulation of 4-year NPV (report Part J)
+requirements.txt       Python dependencies
 project_pulse.db       Local SQLite database created at runtime (not committed)
 ```
 
